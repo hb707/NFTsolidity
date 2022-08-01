@@ -1,8 +1,8 @@
-const HbToken = artifacts.require("HbToken");
-const SaleToken = artifacts.require("SaleToken");
+const SdToken = artifacts.require("SdToken");
+const Market = artifacts.require("Market");
 
 module.exports = async (deployer) => {
-  await deployer.deploy(HbToken, "test", "tst", "http://localhost:3500");
-  const tokenInstance = await HbToken.deployed();
-  await deployer.deploy(SaleToken, tokenInstance.address);
+  await deployer.deploy(SdToken, "test", "tst", "http://localhost:3500");
+  const tokenInstance = await SdToken.deployed();
+  await deployer.deploy(Market, tokenInstance.address);
 };
